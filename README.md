@@ -19,5 +19,5 @@ $ git clone https://github.com/sgawali/news-demo-app.git
 ```
 
 - Rename the `.env.example` file to `.env` and enter your News API Key.
-- `cd` into it and run the following command: `go build && ./news-demo` to start the server on port 3000.
+- `cd` into it and run the following command: `go build then run second command  ./news-demo-app.exe` to start the server on port 3000.
 - Visit http://localhost:3000 in your browser.
