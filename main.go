@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/freshman-tech/news-demo/news"
+	"github.com/sgawali/news-demo-app/news"
 )
 
 var tpl = template.Must(template.ParseFiles("index.html"))
