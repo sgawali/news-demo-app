@@ -1,7 +1,4 @@
-FROM golang:1.23 AS base 
-
-
-ENV NEWS_API_KEY="185b1826c80c483d90ca600eebd1128e"
+FROM golang:1.23 AS base
 
 WORKDIR /app
 # We want to populate the module cache based on the go.{mod,sum} files.
@@ -13,12 +10,12 @@ RUN go mod download
 COPY . .
 
 # Build the Go app
-RUN go build -o ./out/news-demo .
+RUN go build -o ./out/news-demo-app .
 
 # Start fresh from a smaller distroless image
 FROM gcr.io/distroless/base
 
-COPY --from=base /app/out/news-demo /app/news-demo
+COPY --from=base /app/out/news-demo-app /app/news-demo-app
 
 COPY --from=base /app/assets ./assets
 
@@ -30,7 +27,7 @@ COPY --from=base /app/index.html .
 EXPOSE 3000
 
 # Run the binary program produced by `go install`
-CMD ["/app/news-demo"]
+CMD ["/app/news-demo-app"]
 
 
 
