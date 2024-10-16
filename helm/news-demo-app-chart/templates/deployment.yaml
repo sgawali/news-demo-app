@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: news-demo-app
+  labels:
+    app: news-demo-app
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: news-demo-app
+  template:
+    metadata:
+      labels:
+        app: news-demo-app
+    spec:
+      containers:
+      - name: news-demo-app
+        image: samgawali/news-demo-app:{{ .Values.image.tag }}
+        ports:
+        - containerPort: 3000
