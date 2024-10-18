@@ -8,7 +8,7 @@ image:
   repository: samgawali/news-demo-app
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v3"
+  tag: "11411476286"
 
 ingress:
   enabled: false
