@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: fbaabbf9-7098-4040-b2ff-cf5ce0a54d24.lb.civo.com
+  - host: "*.samgawali.com"
     http:
       paths:
       - pathType: Prefix
